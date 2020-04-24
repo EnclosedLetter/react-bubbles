@@ -39,8 +39,9 @@ const Login = props => {
     <div className="LoginForm">
       <h1>Welcome to the Bubble App!</h1>
       <h2>Login for full experience!</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}> {/*create onSubmit*/}
           <input 
+          label="Username"
           type="text" 
           name="username" 
           placeholder="Username Here" 
@@ -48,12 +49,15 @@ const Login = props => {
           onChange={handleChange}
           />
           <input 
+          label="Password"
           type="password" 
           name="password" 
           placeholder="Password Here" 
           value={login.password}
           onChange={handleChange}
           />
+          <button>Log In Now!</button>
+          {login.isFetching && "Please wait... logging you in!"} {/*loading state, there will be a message while loading*/}
       </form>
     </div>
   );
