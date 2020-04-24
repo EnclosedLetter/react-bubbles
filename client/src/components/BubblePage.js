@@ -20,11 +20,11 @@ const BubblePage = (props) => { //forgot to add props
     .catch( err => {
       console.log(err, "sorry, but an error has occurred getting page.")
     });
-}, []);
+}, [props]);
 
   return (
     <>
-      <ColorList props={props} /*do you add this props here?*/ colors={colorList} updateColors={setColorList} />
+      <ColorList props={props} /*this is to make the colors work*/ colors={colorList} updateColors={setColorList} />
       <Bubbles colors={colorList} />
     </>
   );
