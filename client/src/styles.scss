@@ -91,9 +91,13 @@ form {
 
   button {
     border: none;
-    background-color: black;
+    background-color: blue;
     color: white;
     padding: 3px 8px;
     margin-top: 16px;
   }
+}
+
+.LoginForm{
+  border: red;
 }
