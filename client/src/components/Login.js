@@ -10,7 +10,7 @@ const initialState = {
 
 const Login = props => {
 
-  const [login, setLogin] = useState(initialState);
+  const [login, setLogin] = useState(initialState); //Is this correct?
 
   const handleChange = event => {
     setLogin({...login, [event.target.name]: event.target.value});
@@ -20,7 +20,7 @@ const Login = props => {
     event.preventDefault(); //prevent reload
     setLogin({...login, isFetching: true });
     axiosWithAuth()
-    .post("/api/login", { username: 'Lambda School', password: 'i<3Lambd4' }) //our login credentials
+    .post("/api/login", login) //our login credentials
     .then(res => {
       console.log(res)
       //look for the data.message (like the guided project, or res.data.payload)
@@ -29,7 +29,7 @@ const Login = props => {
     })
     //must add in your error catcher
     .catch( err => {
-      console.log(err);
+      // console.log(err);
       alert("Your login was invalid, please try again.")
     })
   }
